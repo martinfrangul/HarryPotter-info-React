@@ -1,50 +1,46 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import "../styles/CharactersList.css";
+import { ContextDataAPI } from "../context/ContextDataAPI";
+
+interface CharacterType {
+  name: string;
+  house: string;
+  id: string;
+}
 
 const CharactersList = () => {
-  const [data, setData] = useState([]);
-  const [list, setPage] = useState([]);
+  const [list, setPage] = useState<CharacterType[]>([]);
   const [nextPage, setNextPage] = useState<number>(20);
-  const [backgroundColor, setBackgroundColor] = useState("");
 
-  useEffect(() => {
-    const llamandoAPI = async () => {
-      try {
-        const response = await fetch(
-          "https://hp-api.onrender.com/api/characters/",
-          {
-            method: "GET",
-            // headers: {
-            //   "Content-type": "application/json;charset=UTF-8",
-            //   // "Authorization": "Bearer YklqRdJCjLMbWH2tMyPG",
-            // },
-          }
-        );
-        const data = await response.json();
-        setData(data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
+  const context = useContext(ContextDataAPI);
 
-    llamandoAPI();
-  }, []);
+  if (!context) {
+    throw new Error("BudgetPanel must be used within a MainProvider");
+  }
+
+  const { data } = context;
+
+  // FUNCIONES PARA QUE MUESTRE DE A 20 RESULTADOS //
 
   const handlePages = () => {
-    const newPage = nextPage + 20;
-    const siguientePagina = data.slice(0, newPage);
-    setPage(siguientePagina);
-    setNextPage(newPage);
+    if (data) {
+      const newPage = nextPage + 20;
+      const siguientePagina = data.slice(0, newPage);
+      setPage(siguientePagina);
+      setNextPage(newPage);
+    }
   };
 
   useEffect(() => {
-    if (data.length > 0) {
+    if (data && data.length > 0) {
       const list = data.slice(0, 20);
       setPage(list);
     }
   }, [data]);
 
-  const getBackgroundColor = (house) => {
+  // COLOR DE FONDO DE DE CADA ITEM DE LA LISTA
+
+  const getBackgroundColor = (house: string) => {
     switch (house) {
       case "Gryffindor":
         return "bg-red-400 ";

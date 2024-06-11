@@ -2,14 +2,15 @@
 import "./styles/App.css";
 import Nabvar from "./components/Navbar";
 import CharactersList from "./components/CharactersList";
+import { APIProvider} from "./context/ContextDataAPI";
 
 function App() {
-  
-
   return (
     <>
-    <Nabvar />
-    <CharactersList />
+      <APIProvider>
+        <Nabvar />
+        <CharactersList />
+      </APIProvider>
     </>
   );
 }
