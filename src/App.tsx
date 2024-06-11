@@ -1,7 +1,7 @@
 // import { useEffect, useState } from "react";
 import "./styles/App.css";
 import Nabvar from "./components/Navbar";
-import CharactersCard from "./components/CharactersCard";
+import CharactersList from "./components/CharactersList";
 
 function App() {
   
@@ -9,7 +9,7 @@ function App() {
   return (
     <>
     <Nabvar />
-    <CharactersCard />
+    <CharactersList />
     </>
   );
 }
