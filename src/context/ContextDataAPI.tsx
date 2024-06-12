@@ -19,6 +19,7 @@ interface CharacterType {
   name: string;
   house: string;
   id: string;
+  image: string;
 }
 
 interface CharactersGroupType {

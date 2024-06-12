@@ -6,6 +6,7 @@ interface CharacterType {
   name: string;
   house: string;
   id: string;
+  image: string;
 }
 
 const CharactersList = () => {
@@ -66,7 +67,15 @@ const CharactersList = () => {
             )} bg-green border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-row items-center justify-between`}
           >
             <div className="p-2 flex flex-row justify-between items-center w-full">
-              <div className=" w-1/4"></div>
+              <div className=" w-1/4">
+                <div className="character-image flex items-center justify-center">
+                  <img
+                    className="w-20 h-20 object-top rounded-full object-cover"
+                    src={item.image}
+                    alt="character-image"
+                  />
+                </div>
+              </div>
               <div className="w-2/4 p-5 flex flex-col items-center justify-center">
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                   {item.name}

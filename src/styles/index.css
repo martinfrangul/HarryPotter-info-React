@@ -1,16 +1,21 @@
+@import "../assets/fonts.css";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
+  .font-harry {
+    font-family: 'Harry Potter';
+  }
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-image: url('../../src/assets/Harry-Potter-vs-Voldemort-poster.webp');
+  background-image: url('../../src/assets/img/Harry-Potter-vs-Voldemort-poster.webp');
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
