@@ -1,20 +1,30 @@
-// import { useEffect, useState } from "react";
 import "./styles/App.css";
-import Nabvar from "./components/Navbar";
+import Navbar from "./components/Navbar";
 import { APIProvider } from "./context/ContextDataAPI";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import CharactersList from "./components/CharactersList";
+import CharacterCard from "./components/CharacterCard";
+import { useState } from "react";
 
 function App() {
+
+const [selectedIdData, setSelectedIdData] = useState<string | null>(null);
+
+  const handleSelectedId = (selectedId: string) => {
+    setSelectedIdData(selectedId)
+  }
+
   return (
     <Router>
       <APIProvider>
-        <Nabvar />
+        <Navbar />
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/characters" element={<CharactersList />} />
+          <Route path="/characters" element={<CharactersList selectedId={handleSelectedId} />} />
+          <Route path="/characterCard" element={<CharacterCard idForCard={selectedIdData}  />} />
+
         </Routes>
       </APIProvider>
     </Router>

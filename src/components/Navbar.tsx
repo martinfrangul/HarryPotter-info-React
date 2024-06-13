@@ -1,13 +1,9 @@
 import { NavLink } from "react-router-dom";
 import banner from "../assets/img/banner.png";
-import '../assets/fonts.css';
-
+import "../assets/fonts.css";
 
 const Nabvar = () => {
-
-const handleActiveBtn = () => {
-
-}
+  // const handleActiveBtn = () => {};
 
   return (
     <>
@@ -15,17 +11,18 @@ const handleActiveBtn = () => {
         <div className="w-1/3 flex items-center gap-4 p-5">
           <NavLink
             to="/"
-            className='btn btn-lg px-4 py-2 text-xl border-2 rounded-lg bg-black font-bold '
+            className="relative btn btn-lg px-4 py-2 text-xl border-b-2 border-transparent hover:border-neutral-500 focus:border-neutral-500 focus:outline-none"
           >
             Home
           </NavLink>
           <NavLink
             to="/characters"
-            onClick={handleActiveBtn}
-            className='btn btn-lg px-4 py-2 text-xl border-2 rounded-lg'
+            // onClick={handleActiveBtn}
+            className="relative btn btn-lg px-4 py-2 text-xl border-b-2 border-transparent hover:border-neutral-500 focus:border-neutral-500 focus:outline-none"
           >
             Characters
           </NavLink>
+          
         </div>
         <div className="w-1/3 flex justify-center">
           <img src={banner} alt="banner-hp" className=" w-[30rem] p-5" />

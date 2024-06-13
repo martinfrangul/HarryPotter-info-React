@@ -5,6 +5,7 @@ import {
   Dispatch,
   SetStateAction,
 } from "react";
+import { CharacterTypeComplete } from "../types";
 
 const ContextDataAPI = createContext<CharactersGroupType | undefined>({
   data: [],
@@ -15,21 +16,14 @@ interface MainProviderProps {
   children: React.ReactNode;
 }
 
-interface CharacterType {
-  name: string;
-  house: string;
-  id: string;
-  image: string;
-}
-
 interface CharactersGroupType {
-  data: CharacterType[];
-  setData: Dispatch<SetStateAction<CharacterType[]>>;
+  data: CharacterTypeComplete[];
+  setData: Dispatch<SetStateAction<CharacterTypeComplete[]>>;
 }
 
 const APIProvider: React.FC<MainProviderProps> = ({ children }) => {
-  const [data, setData] = useState<CharacterType[]>([]);
-  
+  const [data, setData] = useState<CharacterTypeComplete[]>([]);
+
   useEffect(() => {
     const llamandoAPI = async () => {
       try {
