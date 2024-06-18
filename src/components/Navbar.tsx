@@ -28,11 +28,17 @@ const Nabvar = () => {
           <img src={banner} alt="banner-hp" className=" w-[30rem] p-5" />
         </div>
         <div className="btn-container flex gap-3 justify-end w-1/3 p-3">
-          <button className="btn rounded p-3 bg-yellow-200 text-black">
+          <NavLink className="btn rounded p-3 bg-yellow-200 text-black"
+          to="/login">
             {" "}
             Login
-          </button>
-          <button className="btn rounded p-3 bg-gray-400"> Register</button>
+          </NavLink>
+          <NavLink
+            to="/register"
+            className="btn rounded p-3 bg-gray-400"
+          >
+            Register
+          </NavLink>
         </div>
       </div>
     </>

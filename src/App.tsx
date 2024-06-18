@@ -6,6 +6,8 @@ import Home from "./components/Home";
 import CharactersList from "./components/CharactersList";
 import CharacterCard from "./components/CharacterCard";
 import { useState } from "react";
+import Register from "./components/Register";
+import LogIn from "./components/LogIn";
 
 function App() {
 
@@ -24,6 +26,9 @@ const [selectedIdData, setSelectedIdData] = useState<string | null>(null);
           <Route path="/" element={<Home />} />
           <Route path="/characters" element={<CharactersList selectedId={handleSelectedId} />} />
           <Route path="/characterCard" element={<CharacterCard idForCard={selectedIdData}  />} />
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/register" element={<Register />} />
+
 
         </Routes>
       </APIProvider>

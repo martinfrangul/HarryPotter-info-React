@@ -16,7 +16,31 @@ const CharactersList: React.FC<CharactersListProps> = ({ selectedId }) => {
     throw new Error("Characters data must be used within a MainProvider");
   }
 
-  const { data } = context;
+  const { data, setData } = context;
+
+  useEffect(() => {
+    const llamandoAPI = async () => {
+      try {
+        const response = await fetch(
+          "https://hp-api.onrender.com/api/characters/",
+          {
+            method: "GET",
+            // headers: {
+            //   "Content-type": "application/json;charset=UTF-8",
+            //   // "Authorization": "Bearer YklqRdJCjLMbWH2tMyPG",
+            // },
+          }
+        );
+        const data = await response.json();
+        setData(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    llamandoAPI();
+  }, [setData]);
+
 
   // FUNCIONES PARA QUE MUESTRE DE A 20 RESULTADOS //
 
