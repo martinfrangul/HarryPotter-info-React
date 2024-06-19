@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import {auth} from '../firebase'
+import { FormEvent, ChangeEvent } from "../types";
+
 
 
 
@@ -9,7 +11,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent) => {
     if (!email || !password) return;
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
@@ -26,8 +28,8 @@ const Register = () => {
   };
     
     
-    const handleEmailChange = (e) => setEmail(e.target.value)
-    const handlePasswordChange = (e) => setPassword(e.target.value)
+    const handleEmailChange = (e: ChangeEvent) => setEmail(e.target.value)
+    const handlePasswordChange = (e: ChangeEvent) => setPassword(e.target.value)
 
 
   return (

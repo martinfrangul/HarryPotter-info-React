@@ -1,31 +1,28 @@
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import {auth} from '../firebase'
+import { FormEvent, ChangeEvent } from "../types";
+
 
 const LogIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (!email || !password) return;
+
     signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      console.log(user);
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      alert(errorCode)
-      alert(errorMessage)
-    });
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        alert(`Error (${errorCode}): ${errorMessage}`);
+      });
   };
     
     
-    const handleEmailChange = (e) => setEmail(e.target.value)
-    const handlePasswordChange = (e) => setPassword(e.target.value)
+    const handleEmailChange = (e: ChangeEvent) => setEmail(e.target.value)
+    const handlePasswordChange = (e: ChangeEvent) => setPassword(e.target.value)
 
 
 

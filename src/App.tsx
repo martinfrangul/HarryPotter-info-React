@@ -8,8 +8,14 @@ import CharacterCard from "./components/CharacterCard";
 import { useState } from "react";
 import Register from "./components/Register";
 import LogIn from "./components/LogIn";
+import ProtectedRoute from "./components/ProtectedRoute";
+import { AuthContext } from "./context/AuthContext";
+import { useContext } from "react";
+import { AuthContextProvider } from "./context/AuthContext";
 
 function App() {
+
+
 
 const [selectedIdData, setSelectedIdData] = useState<string | null>(null);
 
@@ -17,21 +23,33 @@ const [selectedIdData, setSelectedIdData] = useState<string | null>(null);
     setSelectedIdData(selectedId)
   }
 
+  const context = useContext(AuthContext);
+
+  if (!context) {
+    return <div>Loading...</div>;
+  }
+
+
   return (
     <Router>
+      <AuthContextProvider>
       <APIProvider>
         <Navbar />
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/characters" element={<CharactersList selectedId={handleSelectedId} />} />
-          <Route path="/characterCard" element={<CharacterCard idForCard={selectedIdData}  />} />
+          
+          <Route path="/characters"  element={ <ProtectedRoute ><CharactersList selectedId={handleSelectedId}/>  </ProtectedRoute> } />
+          
+          <Route path="/characterCard" element={ <CharacterCard idForCard={selectedIdData}  />} />
+
           <Route path="/login" element={<LogIn />} />
           <Route path="/register" element={<Register />} />
 
 
         </Routes>
       </APIProvider>
+      </AuthContextProvider>
     </Router>
   );
 }

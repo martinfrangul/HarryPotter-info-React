@@ -1,9 +1,17 @@
 import { NavLink } from "react-router-dom";
 import banner from "../assets/img/banner.png";
 import "../assets/fonts.css";
+import { useContext } from "react";
+import {AuthContext} from "../context/AuthContext"
 
 const Nabvar = () => {
-  // const handleActiveBtn = () => {};
+
+
+const context = useContext(AuthContext)
+
+const { user, handleSignOut } = context
+
+
 
   return (
     <>
@@ -17,7 +25,6 @@ const Nabvar = () => {
           </NavLink>
           <NavLink
             to="/characters"
-            // onClick={handleActiveBtn}
             className="relative btn btn-lg px-4 py-2 text-xl border-b-2 border-transparent hover:border-neutral-500 focus:border-neutral-500 focus:outline-none"
           >
             Characters
@@ -27,7 +34,7 @@ const Nabvar = () => {
         <div className="w-1/3 flex justify-center">
           <img src={banner} alt="banner-hp" className=" w-[30rem] p-5" />
         </div>
-        <div className="btn-container flex gap-3 justify-end w-1/3 p-3">
+        {!user ? <div className="btn-container flex gap-3 justify-end w-1/3 p-3">
           <NavLink className="btn rounded p-3 bg-yellow-200 text-black"
           to="/login">
             {" "}
@@ -39,7 +46,8 @@ const Nabvar = () => {
           >
             Register
           </NavLink>
-        </div>
+        </div> : 
+        <button onClick={handleSignOut}>LOGOUT</button>}
       </div>
     </>
   );

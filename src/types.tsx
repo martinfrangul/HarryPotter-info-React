@@ -1,3 +1,5 @@
+// CHARACTERS TYPES
+
 export interface CharacterType {
   house: string;
   id: string;
@@ -10,18 +12,6 @@ export interface CharacterTypeComplete extends CharacterType {
   gender: string;
   wizard: boolean;
   actor: string;
-}
-
-export interface CharacterCardProps {
-    idForCard: string | null;
-  }
-
-export interface SelectedIdType {
-  selectedId: string;
-}
-
-export interface ContextDataAPIType {
-  data: CharacterTypeComplete[];
 }
 
 export interface CharactersListProps {
@@ -38,3 +28,24 @@ export interface CharacterTypeComplete {
   actor: string;
   name: string;
 }
+export interface CharacterCardProps {
+    idForCard: string | null;
+  }
+
+
+export interface SelectedIdType {
+  selectedId: string;
+}
+
+export interface ContextDataAPIType {
+  data: CharacterTypeComplete[];
+}
+
+
+// EVENT TYPES
+
+export type FormEvent = React.FormEvent<HTMLFormElement>
+export type ChangeEvent = React.ChangeEvent<HTMLInputElement>
+
+
+
