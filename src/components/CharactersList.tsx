@@ -79,7 +79,7 @@ const CharactersList: React.FC<CharactersListProps> = ({ selectedId }) => {
 
   return (
     <>
-      <div className="grid grid-cols-1 gap-4 w-2/4 m-auto">
+      <div className="grid grid-cols-1 gap-4 w-2/4 m-auto mt-5">
         {list.map((item) => (
           <div
             key={item.id}

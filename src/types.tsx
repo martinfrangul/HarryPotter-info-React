@@ -18,16 +18,13 @@ export interface CharactersListProps {
   selectedId: (id: string) => void;
 }
 
-export interface CharacterTypeComplete {
-  house: string;
-  id: string;
-  image: string;
-  species: string;
-  gender: string;
-  wizard: boolean;
-  actor: string;
-  name: string;
+export interface AlertProps {
+  type: 'error' | 'warning' | 'info';
+  message: string;
+  onClose: () => void;
+  duration?: number;
 }
+
 export interface CharacterCardProps {
     idForCard: string | null;
   }

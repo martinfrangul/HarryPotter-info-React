@@ -24,7 +24,7 @@ const AuthContextProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [user, setUser] = useState<User | null>(null);
-  const [isFetching, setIsFetching] = useState(true);
+  const [isFetching, setIsFetching] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {

@@ -15,7 +15,7 @@ const ProtectedRoute: React.FC<{ children: ReactNode }> = ({children}) => {
       }
 
     if (user === null) {
-        return <Navigate to="/login" />;
+        return <Navigate to="/" />;
       }
     
       return <>{children}</>;
