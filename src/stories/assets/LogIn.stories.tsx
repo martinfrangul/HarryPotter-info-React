@@ -18,5 +18,5 @@ const Template: StoryFn<typeof LogIn> = (args) => <LogIn {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-    onSubmit: (email, password) => console.log(`Login submitted with email: ${email} and password: ${password}`),
+    onSubmit: (email: string, password: string) => console.log(`Login submitted with email: ${email} and password: ${password}`),
 };
