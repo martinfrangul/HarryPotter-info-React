@@ -13,7 +13,7 @@ function Home() {
             opacity: { duration: 4 },
             y: {duration: 5}
           }}
-          className=" text-[10rem] font-harry h-full stroke-slate-900 stroke-2"
+          className=" lg:text-[10rem] text-[5rem] font-harry h-full stroke-slate-900 stroke-2"
         >
           WELCOME
         </motion.h1>

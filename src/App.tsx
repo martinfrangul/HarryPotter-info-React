@@ -12,16 +12,14 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import { AuthContext } from "./context/AuthContext";
 import { useContext } from "react";
 import { AuthContextProvider } from "./context/AuthContext";
+import Spells from "./components/Spells";
 
 function App() {
-
-
-
-const [selectedIdData, setSelectedIdData] = useState<string | null>(null);
+  const [selectedIdData, setSelectedIdData] = useState<string | null>(null);
 
   const handleSelectedId = (selectedId: string) => {
-    setSelectedIdData(selectedId)
-  }
+    setSelectedIdData(selectedId);
+  };
 
   const context = useContext(AuthContext);
 
@@ -29,26 +27,38 @@ const [selectedIdData, setSelectedIdData] = useState<string | null>(null);
     return <div>Loading...</div>;
   }
 
-
   return (
     <Router>
       <AuthContextProvider>
-      <APIProvider>
-        <Navbar />
+        <APIProvider>
+          <Navbar />
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          
-          <Route path="/characters"  element={ <ProtectedRoute ><CharactersList selectedId={handleSelectedId}/>  </ProtectedRoute> } />
-          
-          <Route path="/characterCard" element={ <CharacterCard idForCard={selectedIdData}  />} />
-
-          <Route path="/login" element={<LogIn />} />
-          <Route path="/register" element={<Register />} />
-
-
-        </Routes>
-      </APIProvider>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/characters"
+              element={
+                <ProtectedRoute>
+                  <CharactersList selectedId={handleSelectedId} />{" "}
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/characterCard"
+              element={<CharacterCard idForCard={selectedIdData} />}
+            />
+            <Route
+              path="/spells"
+              element={
+                <ProtectedRoute>
+                  <Spells />
+                </ProtectedRoute>
+              }
+            />
+            <Route path="/login" element={<LogIn />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        </APIProvider>
       </AuthContextProvider>
     </Router>
   );

@@ -19,7 +19,7 @@ const CharactersList: React.FC<CharactersListProps> = ({ selectedId }) => {
   const { data, setData } = context;
 
   useEffect(() => {
-    const llamandoAPI = async () => {
+    const fetchCharacters = async () => {
       try {
         const response = await fetch(
           "https://hp-api.onrender.com/api/characters/",
@@ -38,9 +38,8 @@ const CharactersList: React.FC<CharactersListProps> = ({ selectedId }) => {
       }
     };
 
-    llamandoAPI();
+    fetchCharacters();
   }, [setData]);
-
 
   // FUNCIONES PARA QUE MUESTRE DE A 20 RESULTADOS //
 
@@ -79,7 +78,7 @@ const CharactersList: React.FC<CharactersListProps> = ({ selectedId }) => {
 
   return (
     <>
-      <div className="grid grid-cols-1 gap-4 w-2/4 m-auto mt-5">
+      <div className="grid grid-cols-1 gap-4 w-full lg:w-1/2 m-auto mt-5">
         {list.map((item) => (
           <div
             key={item.id}
@@ -109,9 +108,7 @@ const CharactersList: React.FC<CharactersListProps> = ({ selectedId }) => {
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
                   {item.name}
                 </h5>
-                <p className="mb-3 font-normal text-gray-700">
-                  {item.house}
-                </p>
+                <p className="mb-3 font-normal text-gray-700">{item.house}</p>
               </div>
               <div className="item-button w-1/4 flex justify-end p-3">
                 <NavLink
