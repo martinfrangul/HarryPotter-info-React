@@ -1,30 +1,52 @@
-# React + TypeScript + Vite
+# Proyecto de API de Harry Potter y Wiki
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto utiliza una API de Harry Potter para mostrar información y crear una Wiki. También incluye autenticación mediante Firebase y está desarrollado en React con TypeScript y estilizado con Tailwind CSS.
 
-Currently, two official plugins are available:
+## Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Consumo de API:** Utiliza la API de Harry Potter para obtener información sobre personajes, casas, hechizos, etc.
+- **Autenticación con Firebase:** Permite a los usuarios registrarse e iniciar sesión utilizando Firebase Authentication.
+- **Interfaz de Usuario Moderna:** Desarrollado con React y TypeScript para un código más seguro y mantenible, y estilizado con Tailwind CSS para un diseño moderno y adaptable.
+  
+## Tecnologías Utilizadas
 
-## Expanding the ESLint configuration
+- **React:** Biblioteca de JavaScript para construir interfaces de usuario.
+- **TypeScript:** Superset de JavaScript que agrega tipado estático opcional.
+- **Tailwind CSS:** Framework de estilos utilitarios para diseñar interfaces de usuario personalizadas.
+- **Firebase:** Plataforma de desarrollo de aplicaciones móviles y web desarrollada por Google, que proporciona herramientas y servicios para desarrollar aplicaciones de calidad.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Configuración del Proyecto
 
-- Configure the top-level `parserOptions` property like this:
+1. **Clonar el repositorio:**
+   ```bash
+   git clone https://github.com/tu-usuario/repo-api-harry-potter.git
+   cd repo-api-harry-potter
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. **Instalar dependencias:**
+   ```bash
+   npm install
+
+3. **Configurar Firebase:**
+
+Crea un proyecto en Firebase Console.
+Habilita la autenticación por correo electrónico y contraseña en Firebase Authentication.
+Copia la configuración de Firebase (apiKey, authDomain, etc.) en un archivo .env o en el archivo de configuración adecuado.
+
+2. **Ejecutar la aplicación:**
+   ```bash
+   npm run dev
+
+## Contribución
+
+Si deseas contribuir a este proyecto, sigue estos pasos:
+
+1. Haz un fork del proyecto.
+2. Crea una nueva rama (\`git checkout -b feature/feature-name\`).
+3. Realiza tus cambios y commitea (\`git commit -am 'Agrega nueva funcionalidad'\`).
+4. Sube tus cambios (\`git push origin feature/feature-name\`).
+5. Abre un Pull Request.
+
+## Licencia
+
+Este proyecto está bajo la licencia MIT. Para más detalles, lee el archivo \`LICENSE\`.
