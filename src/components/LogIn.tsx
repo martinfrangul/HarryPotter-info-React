@@ -4,7 +4,7 @@ import { auth } from '../firebase';
 import { FormEvent, ChangeEvent } from '../types';
 import Alert from './Alert';
 
-const LogIn = () => {
+const LogIn: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');

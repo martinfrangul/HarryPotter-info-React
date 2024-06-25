@@ -42,8 +42,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ idForCard }) => {
   return (
     <>
       <section>
-        <h1 className=" w-full h-full bg-black text-3xl p-4 font-semibold">CHARACTER INFO</h1>
-        <hr  className="mb-4"/>
+        <h1 className=" w-full h-full bg-black text-3xl p-4 font-semibold mb-4">CHARACTER INFO</h1>
         <div className="container flex flex-row items-center justify-evenly bg-zinc-950 bg-opacity-75 w-[50rem] h-[30rem] m-auto p-10 rounded-3xl ">
           <div>
             <h1 className="text-4xl p-4"> {character.name}</h1>
