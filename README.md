@@ -2,6 +2,7 @@
 
 Este proyecto utiliza una API de Harry Potter para mostrar información y crear una Wiki. También incluye autenticación mediante Firebase y está desarrollado en React con TypeScript y estilizado con Tailwind CSS.
 
+
 ## Características
 
 - **Consumo de API:** Utiliza la API de Harry Potter para obtener información sobre personajes, casas, hechizos, etc.
@@ -14,6 +15,16 @@ Este proyecto utiliza una API de Harry Potter para mostrar información y crear 
 - **TypeScript:** Superset de JavaScript que agrega tipado estático opcional.
 - **Tailwind CSS:** Framework de estilos utilitarios para diseñar interfaces de usuario personalizadas.
 - **Firebase:** Plataforma de desarrollo de aplicaciones móviles y web desarrollada por Google, que proporciona herramientas y servicios para desarrollar aplicaciones de calidad.
+
+# Fotos
+![welcomeImg](https://github.com/user-attachments/assets/942b676c-c755-4642-90a6-cb61acb234f3)
+![loginImg](https://github.com/user-attachments/assets/d444a41a-d6d7-429a-b632-0b9c1bffd930)
+![registerImg](https://github.com/user-attachments/assets/2db6af7b-a713-4a22-8e2b-913da0be4fb0)
+![characterListImg](https://github.com/user-attachments/assets/80f8463f-1c7d-474e-bee3-51dd209cf6b4)
+![characterInfoImg](https://github.com/user-attachments/assets/8e7caecd-9b65-41f2-9b1e-74f63f8ec914)
+![characterInfo2Img](https://github.com/user-attachments/assets/d1ac5940-042d-458c-8cf6-e448b2f75041)
+![spellsImg](https://github.com/user-attachments/assets/6b2c660b-9645-4be0-af98-32373785b6e1)
+
 
 ## Configuración del Proyecto
 
